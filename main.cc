@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
     {"analyze-table", required_argument, 0, 't'},
     {"analyze-index", required_argument, 0, 'i'},
     {"parse-page", required_argument, 0, 'p'},
-    {"parse-page-no-print-record", no_argument, 0, 'n'},
+    {"no-print-record", no_argument, 0, 'n'},
     {"version", no_argument, 0, 'v'},
     {0, 0, 0, 0}  // End of options
   };
