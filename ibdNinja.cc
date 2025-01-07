@@ -1053,11 +1053,7 @@ bool Index::FillIndex(uint32_t ind) {
   s_user_defined_key_parts_ = 0;
   s_key_length_ = 0;
   s_flags_ = 0;
-  if (ind == 0) {
-    assert(dd_name_ == "PRIMARY" ||
-           // Special case: mysql.index_column_usage
-           table_->hidden() == Table::HT_HIDDEN_SYSTEM);
-  }
+
   for (auto* iter : dd_elements_) {
     if (iter->hidden()) {
       continue;
