@@ -2482,7 +2482,8 @@ struct IndexAnalyzeResult {
 void Record::ParseRecord(bool leaf, uint32_t row_no,
                          PageAnalysisResult* result,
                          bool print) {
-  uint32_t n_fields = leaf ? index_->GetNFields() : index_->ib_n_uniq() + 1;
+  uint32_t n_fields = leaf ? index_->GetNFields() :
+                             index_->GetNUniqueInTreeNonleaf() + 1;
   uint32_t header_len = (RecOffsBase(offsets_)[0] & REC_OFFS_MASK);
   uint32_t rec_len = (RecOffsBase(offsets_)[n_fields] &
                       REC_OFFS_MASK);
